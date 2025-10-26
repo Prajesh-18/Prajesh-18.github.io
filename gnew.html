@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #ff1060; /* Sky blue background */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            color: white;
+            z-index: 1;
+        }
+        
+        .message {
+            font-size: 60px;
+            font-weight: bold;
+            background: -webkit-linear-gradient(45deg, violet, pink, #0099ff, #0055ff);
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: fadeIn 3s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">  MADAM!</div>
+    <div class="container">
+        <div class="message">You are wonderfull!</div>
+        <div class="message">Birthday Makes You Special!</div>
+        <div class="message">Pretty Girl!</div>
+    </div>
+</body>
+</html>

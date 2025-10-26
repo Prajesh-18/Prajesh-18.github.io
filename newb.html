@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birthday Animation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #952e8e;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .message {
+      font-size: 72px;
+      font-weight: 900;
+      background: -webkit-linear-gradient(45deg, rgb(254, 49, 193), pink, #0099ff, #0055ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+      /* Removed animation for static text */
+      opacity: 1;
+      transform: none;
+      margin-bottom: 20px;
+    }
+    .heart{
+      font-size: 72px;
+      font-weight: 900;
+
+    }
+
+    .button {
+      padding: 20px 40px;
+      font-size: 50px;
+      background-color: transparent;
+      border: 4px solid #ff66b2;
+      color: #ff66b2;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      z-index: 3;
+      display: inline-block;
+    }
+    .button:hover {
+      background-color: #ff66b2;
+      color: white;
+    }
+
+    .balloon {
+      position: absolute;
+      font-size: 30px;
+      animation: floatUp 6s ease-in infinite;
+      opacity: 0.9;
+      z-index: 1;
+    }
+
+    @keyframes floatUp {
+      0% {
+        bottom: -50px;
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      100% {
+        bottom: 100%;
+        opacity: 0;
+      }
+    }
+
+    .confetti {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .confetti div {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background-color: #ff66b2;
+      opacity: 0;
+      animation: confFall 5s linear infinite;
+    }
+
+    @keyframes confFall {
+      0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+
+    .confetti div:nth-child(odd) {
+      background-color: #0099ff;
+      animation-duration: 4s;
+    }
+
+    .confetti div:nth-child(3n) {
+      background-color: #00ff00;
+      animation-duration: 6s;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="message">Happy Birthday Pa! </div> <div class="heart">💖</div>
+    <br> 
+    <a href="gnew.html">
+      <button class="button">🎁</button>
+    </a>
+  </div>
+
+  <!-- 🎈 Floating Balloons -->
+  <div class="balloon" style="left: 15%; animation-delay: 0s;">🎈</div>
+  <div class="balloon" style="left: 35%; animation-delay: 1s;">🎈</div>
+  <div class="balloon" style="left: 55%; animation-delay: 2s;">🎈</div>
+  <div class="balloon" style="left: 75%; animation-delay: 0.5s;">🎈</div>
+  <div class="balloon" style="left: 90%; animation-delay: 1.2s;">🎈</div>
+
+  <!-- 🎉 Confetti -->
+  <div class="confetti">
+    <div style="left: 5%; animation-delay: 0s;"></div>
+    <div style="left: 25%; animation-delay: 1s;"></div>
+    <div style="left: 45%; animation-delay: 2s;"></div>
+    <div style="left: 65%; animation-delay: 0.7s;"></div>
+    <div style="left: 85%; animation-delay: 1.5s;"></div>
+    <div style="left: 15%; animation-delay: 0.8s;"></div>
+    <div style="left: 35%; animation-delay: 3s;"></div>
+    <div style="left: 55%; animation-delay: 4s;"></div>
+    <div style="left: 75%; animation-delay: 2.5s;"></div>
+    <div style="left: 95%; animation-delay: 1s;"></div>
+  </div>
+
+</body>
+</html>
